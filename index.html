@@ -3,49 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ortsfrage mit Gruppen</title>
+    <title>Frage 2</title>
     <script>
         function checkAnswer() {
             var answer = document.getElementById("answer").value.toLowerCase();
             var group = document.getElementById("group").value;
 
-            if (answer === "katze") {
-                if (group === "Aligse" || group === "Lehrte") {
-                    alert("Guckt nochmal in eurem Zelt, der Schatz liegt doch schon da!");
-                    return;
-                     }
-                var routes = {
-                    "Steinwedel": "https://www.google.com/maps/dir/52.387927,10.093568/52.388857,10.080360", <!--Knüppel2-->
-                    "Ahlten": "https://www.google.com/maps/dir/52.387927,10.093568/52.388857,10.080360", <!--Knüppel2-->
-                    "Sievershausen": "https://www.google.com/maps/dir/52.387927,10.093568/52.391746,10.086804", <!--Bahnhof3-->
-                    "Kolshorn": "https://www.google.com/maps/dir/52.387927,10.093568/52.392071,10.089507", <!--Krummerkamp4-->
-                };
-
-                if (routes[group]) {
-                    window.location.href = routes[group];
-                } else {
-                    alert("Bitte wähle eine gültige Gruppe aus.");
-                }
-            } else {
-                alert("Falsche Antwort! Bitte versuche es erneut.");
-            }
+            var message = "Gruppe: " + group + " | Antwort Frage 2: " + answer;
+            var whatsappLink = "https://wa.me/4915771817461?text=" + encodeURIComponent(message);
+            window.location.href = whatsappLink;
         }
     </script>
 </head>
 <body>
-    <h1>Gruppenauswahl und Ortsfrage</h1>
+    <h1>Frage 2</h1>
     <p>Bitte wähle deine Gruppe:</p>
     <select id="group">
         <option value="">-- Gruppe auswählen --</option>
+        <option value="Arpke">Arpke und Sievershausen</option>
         <option value="Aligse">Aligse</option>
-        <option value="Steinwedel">Steinwedel</option>
+        <option value="Steinwedel">Kolshorn</option>
         <option value="Ahlten">Ahlten</option>
-        <option value="Lehrte">Lehrte</option>
-        <option value="Sievershausen">Sievershausen</option>
-        <option value="Kolshorn">Kolshorn</option>
+        <option value="Lehrte">Lehrte 1</option>
+        <option value="Immensen">Immensen</option>
+        <option value="Sievershausen">Lehrte 2</option>
+        <option value="Hämelerwald">Hämelerwald</option>
     </select>
 
-    <p>Welches Tier wurde in Ägypten verehrt?</p>
+    <p>Was ist Orange und läuft durch den Wald?</p>
     <input type="text" id="answer" placeholder="Ort eingeben...">
     <button onclick="checkAnswer()">Antwort überprüfen</button>
 </body>
